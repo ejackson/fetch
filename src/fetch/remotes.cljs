@@ -2,10 +2,10 @@
   (:require [fetch.core :as core]
             [cljs.reader :as reader]))
 
-(def remote-uri "/remotes/_fetch")
+(defn remote-uri [context] (str context "/_fetch"))
 
 (defn remote-callback [remote params callback]
-  (core/xhr [:post remote-uri]
+  (core/xhr [:post (remote-uri "remotes")]
             {:remote remote
              :params (pr-str params)}
             (when callback
