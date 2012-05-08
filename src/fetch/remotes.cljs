@@ -2,7 +2,7 @@
   (:require [fetch.core :as core]
             [cljs.reader :as reader]))
 
-(def remote-uri "pinot-fetch")
+(def remote-uri "/remotes/_fetch")
 
 (defn remote-callback [remote params callback]
   (core/xhr [:post remote-uri]
