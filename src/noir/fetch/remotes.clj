@@ -34,3 +34,8 @@
   (let [params (safe-read params)
         remote (keyword remote)]
     (call-remote remote params)))
+
+(defpage [:any "/pinot-fetch"] {:keys [remote params]}
+  (let [params (safe-read params)
+        remote (keyword remote)]
+    (call-remote remote params)))
